@@ -1,3 +1,7 @@
+# Added as part of this work.
+*.txt
+*.png
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
