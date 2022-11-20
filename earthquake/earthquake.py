@@ -1,6 +1,6 @@
 from pgmpy.factors.discrete import TabularCPD
-from pgmpy.models import BayesianNetwork
 from pgmpy.inference import VariableElimination
+from pgmpy.models import BayesianNetwork
 
 # Create the Bayesian network structure.
 earthquake_model = BayesianNetwork(
@@ -49,7 +49,8 @@ earthquake_model.add_cpds(
 # Check if the model seems OK and write the output to a file.
 with open("earthquake_model_check.txt", "w") as f_check:
     f_check.write(
-        f"The earthquake model passed the check: {earthquake_model.check_model()}."
+        "The earthquake model passed the check: "
+        f"{earthquake_model.check_model()}."
     )
 
 # Draw the Bayesian network.
@@ -77,7 +78,9 @@ infer = VariableElimination(earthquake_model)
 mary_calls_dist = infer.query(["MaryCalls"])
 mary_calls_alarm_dist = infer.query(["MaryCalls"], evidence={"Alarm": 1})
 mary_calls_prediction = infer.map_query(["MaryCalls"])
-mary_calls_alarm_prediction = infer.map_query(["MaryCalls"], evidence={"Alarm": 1})
+mary_calls_alarm_prediction = infer.map_query(
+    ["MaryCalls"], evidence={"Alarm": 1}
+)
 
 with open("earthquake_Mary_inference.txt", "w") as f_Mary:
     f_Mary.write(f"{mary_calls_dist}")
