@@ -17,9 +17,9 @@ Some basic examples that cover creating, fitting, and describing BNs are given. 
 |---structure<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|---learn_structure.py<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|---...<br/>
-|--- .gitignore
-|--- LICENCE
-|--- README.md
+|--- .gitignore<br/>
+|--- LICENCE<br/>
+|--- README.md<br/>
 
 Examples are kept in separate files which relate to a particular BN. Taken together, these BN examples represent a quick tour of some functions available in **pgmpy**.
 
